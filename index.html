@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FinKindle Financial Services – Anil Samudrala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="FinKindle Financial Services – Family protection, college funding education, retirement income and legacy planning, tax-advantaged wealth strategies, and estate planning education." />
+
+  <style>
+    :root {
+      --navy: #071525;
+      --navy-soft: #101d30;
+      --gold: #d4a438;
+      --gold-soft: #f0c761;
+      --green: #18c45c;
+      --text-light: #f7f7f7;
+      --text-muted: #c3c8d4;
+      --max-width: 960px;
+      --radius: 16px;
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.45);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      --font-size: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top left, #17253a, #030812);
+      color: var(--text-light);
+      line-height: 1.65;
+      font-size: 20px; /* Increased global font size */
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 2.5rem;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy-soft), #020713);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.4rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(
+        circle at top right,
+        rgba(212, 164, 56, 0.18),
+        transparent 60%
+      );
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .header-inner {
+      position: relative;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .logo-badge {
+      flex: 0 0 78px;
+      height: 78px;
+      border-radius: 22px;
+      background: radial-gradient(circle at 20% 20%, #ffe39b, #b88723);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1d2433;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo-badge span {
+      display: block;
+      text-align: center;
+      line-height: 1.05;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-title {
+      font-size: 0.95rem;
+      color: var(--gold-soft);
+      margin-bottom: 0.65rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 26rem;
+    }
+
+    .hero-tagline strong {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .cta-row {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: transform 0.08s ease, box-shadow 0.08s ease,
+        background 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #f4d07a);
+      color: #11141b;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      background: rgba(7, 15, 28, 0.7);
+      color: var(--text-light);
+    }
+
+    .btn-outline:hover {
+      background: rgba(15, 26, 46, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .btn span.icon {
+      margin-right: 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    main {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    section {
+      background: rgba(5, 14, 30, 0.94);
+      border-radius: var(--radius);
+      padding: 1.2rem 1rem 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    section h2 {
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin-bottom: 0.8rem;
+    }
+
+    .about-text {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+
+    .about-text strong {
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.85rem;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 164, 56, 0.45);
+      color: var(--gold-soft);
+      background: rgba(12, 18, 33, 0.9);
+    }
+
+    .services-list {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .services-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .services-list li span.bullet {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      margin-top: 0.35rem;
+      background: radial-gradient(circle at 30% 30%, #ffe39b, #b88723);
+      flex-shrink: 0;
+    }
+
+    .highlight {
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+      margin-top: 0.2rem;
+    }
+
+    .why-card {
+      background: rgba(10, 20, 40, 0.98);
+      border-radius: 12px;
+      padding: 0.6rem 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .why-card strong {
+      display: block;
+      margin-bottom: 0.1rem;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .contact-block {
+      display: grid;
+      gap: 0.45rem;
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+    }
+
+    .contact-line span.label {
+      font-weight: 600;
+      color: var(--text-light);
+      margin-right: 0.3rem;
+    }
+
+    .qr-note {
+      margin-top: 0.85rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+      padding-top: 0.6rem;
+    }
+
+    .qr-box {
+      margin-top: 0.6rem;
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      padding: 0.9rem 0.3rem 0.2rem;
+      font-size: 0.74rem;
+      color: #9da3b4;
+    }
+
+    footer p {
+      margin-bottom: 0.4rem;
+    }
+
+    footer .divider {
+      width: 100%;
+      height: 1px;
+      margin: 0.35rem 0 0.45rem;
+      background: linear-gradient(
+        to right,
+        rgba(212, 164, 56, 0.7),
+        rgba(24, 196, 92, 0.0)
+      );
+    }
+
+    @media (min-width: 720px) {
+      header {
+        padding: 2rem 2rem 1.9rem;
+      }
+
+      .header-inner {
+        gap: 2rem;
+      }
+
+      .hero-name {
+        font-size: 2rem;
+      }
+
+      .hero-tagline {
+        font-size: 1rem;
+      }
+
+      main {
+        margin-top: 2rem;
+        gap: 1.4rem;
+      }
+
+      section {
+        padding: 1.4rem 1.3rem 1.4rem;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .qr-box {
+        width: 135px;
+        height: 135px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="header-inner">
+        <div class="logo-badge" style="background:none; padding:0; box-shadow:none;">
+          <img src="images/Logo_NoText.png" alt="Logo" />
+        </div>
+
+
+        <div class="hero-text">
+          <div class="hero-name">Anil Samudrala</div>
+          <div class="hero-title">
+            Founder | Protection &amp; Wealth-Building Strategist
+          </div>
+          <p class="hero-tagline">
+            <strong>Education-first planning for families.</strong> 
+            Helping you protect income, prepare for education costs, and build 
+            tax-advantaged wealth and legacy using clear, pressure-free conversations.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary"
+               href="tel:16572036167">
+              <span class="icon">📞</span> Call Now
+            </a>
+
+            <a class="btn btn-outline"
+               href="https://wa.me/16572036167"
+               target="_blank" rel="noopener">
+              <span class="icon">💬</span> WhatsApp Chat
+            </a>
+
+            <a class="btn btn-outline"
+               href="mailto:finkindlefinsvcs@gmail.com">
+              <span class="icon">✉️</span> Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- About -->
+      <section id="about">
+        <h2>About FinKindle</h2>
+        <p class="about-text">
+          <strong>FinKindle Financial Services</strong> partners with families
+          to protect what matters most and build multi-generational wealth.
+          Every conversation is focused on clarity, education, and 
+          action-oriented strategies — not one-size-fits-all product pitches.
+        </p>
+
+        <div class="pill-row">
+          <span class="pill">Family Protection</span>
+          <span class="pill">Education-First Planning</span>
+          <span class="pill">Tax-Advantaged Strategies</span>
+          <span class="pill">Legacy &amp; Wealth-Building</span>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services">
+        <h2>How We Can Help You</h2>
+        <ul class="services-list">
+          <li>
+            <span class="bullet"></span>
+            <div>
+              <span class="highlight">Family Protection: Life • Income • Asset</span><br />
+              Strategies to help protect your loved ones, your paycheck, and your
+              long-term goals using insurance-based solutions.
+            </div>
+          </li>
+
+          <li>
+            <span class="bullet"></span>
+            <div>
+              <span class="highlight">College Funding Education &amp; Options</span><br />
+              Learn different ways families prepare for education costs, and
+              where insurance-based strategies may fit alongside other tools.
+            </div>
+          </li>
+
+          <li>
+            <span class="bullet"></span>
+            <div>
+              <span class="highlight">Retirement Income &amp; Legacy Planning</span><br />
+              Explore approaches to create sustainable retirement income and
+              pass wealth efficiently to the next generation.
+            </div>
+          </li>
+
+          <li>
+            <span class="bullet"></span>
+            <div>
+              <span class="highlight">Tax-Advantaged Wealth Strategies</span><br />
+              Education on how certain structures may help grow and distribute
+              wealth in a more tax-efficient way. (Coordinate with your tax professional.)
+            </div>
+          </li>
+
+          <li>
+            <span class="bullet"></span>
+            <div>
+              <span class="highlight">Estate Planning Education (Wills &amp; Trusts)</span><br />
+              Understand key concepts around wills, trusts, and beneficiaries so
+              you can work more confidently with your attorney.
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Why FinKindle -->
+      <section id="why">
+        <h2>Why Families Choose FinKindle</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <strong>Education First</strong>
+            Every conversation starts with teaching — not selling — so you can
+            make confident, informed decisions at your own pace.
+          </div>
+          <div class="why-card">
+            <strong>Family-Centered Approach</strong>
+            Plans are designed around your family’s story, values, and goals,
+            not a generic product checklist.
+          </div>
+          <div class="why-card">
+            <strong>Coordinated Planning</strong>
+            Happy to collaborate with your CPA, attorney, or other
+            professionals to help keep everyone aligned.
+          </div>
+          <div class="why-card">
+            <strong>Licensed &amp; Transparent</strong>
+            Clear explanations of how solutions work, where they fit, and what
+            they cost — with ongoing support as life changes.
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2>Ready to Start the Conversation?</h2>
+
+        <p class="about-text">
+          The first step is a short, no-obligation conversation to understand
+          your current situation and priorities. From there, we can explore
+          whether FinKindle is the right partner for you and your family.
+        </p>
+
+        <div class="cta-row" style="margin-top: 1rem;">
+          <a class="btn btn-primary"
+             href="https://wa.me/16572036167"
+             target="_blank" rel="noopener">
+            <span class="icon">📲</span> Message on WhatsApp
+          </a>
+
+          <a class="btn btn-outline"
+             href="mailto:finkindlefinsvcs@gmail.com">
+            <span class="icon">🗓️</span> Request a Call
+          </a>
+        </div>
+
+        <div class="contact-block">
+          <div class="contact-line">
+            <span class="label">Phone:</span> (657) 203-6167
+          </div>
+          <div class="contact-line">
+            <span class="label">Email:</span> finkindlefinsvcs@gmail.com
+          </div>
+          <div class="contact-line">
+            <span class="label">Location:</span> California, USA
+          </div>
+          <div class="contact-line">
+            <span class="label">License:</span> CA Insurance License # 4454298
+          </div>
+        </div>
+
+        <div class="qr-note">
+          Prefer to save this page for later?  
+          Scan or replace the box below with your QR code image.
+          <div class="qr-box">
+            QR CODE<br />GOES HERE
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="divider"></div>
+      <p>
+        © <span id="year"></span> FinKindle Financial Services. All rights
+        reserved.
+      </p>
+      <p>
+        FinKindle Financial Services provides insurance-based solutions and
+        financial education. Information on this site is for educational
+        purposes only and is not intended as investment, tax, or legal advice.
+        Clients should consult their own tax advisor, attorney, or financial
+        professional regarding their specific situation.
+      </p>
+      <p>
+        No investment advisory services are being offered on this page. Any
+        future advisory services will be provided only through properly
+        registered entities and in accordance with applicable regulations.
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // simple year auto-update
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
